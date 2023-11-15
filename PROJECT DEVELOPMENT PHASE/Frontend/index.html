@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainfall prediction</title>
+</head>
+
+<body background="https://wallpaperaccess.com/full/701614.jpg" text="black">
+    <div class="login">
+        <h1>
+            <center>
+                Rainfall Prediction
+            </center>
+        </h1>
+    </div>
+
+    <form action="{{ url_for('predict')}}" method="post">
+        <label for="Location">Location:</label>
+        <select name="Location" id="Location">
+            <option>Albury</option>
+            <option>BadgerysCreek</option>
+            <option>Cobar</option>
+            <option>CoffsHarbour</option>
+            <option>Moree</option>
+            <option>Newcastle</option>
+            <option>NorahHead</option>
+            <option>NorfolkIsland</option>
+            <option>Penrith</option>
+            <option>Richmond</option>
+            <option>Sydney</option>
+            <option>SydneyAirport</option>
+            <option>Waggawagga</option>
+            <option>Williamtown</option>
+            <option>Wollongong</option>
+            <option>Canberra</option>
+            <option>Tuggeranong</option>
+            <option>MountGinini</option>
+            <option>Ballarat</option>
+            <option>Bendigo</option>
+            <option>Sale</option>
+            <option>MelbourneAirport</option>
+            <option>Melbourne</option>
+            <option>Mildura</option>
+            <option>Nhil</option>
+            <option>Portland</option>
+            <option>Watsonia</option>
+        </select>
+
+        <input type="text" id="inputField" name="name" placeholder="Min Temp">
+        <input type="text" id="inputField" name="name" placeholder="Max Temp">
+        <input type="text" id="inputField" name="name" placeholder="Rainfall">
+        <input type="text" id="inputField" name="name" placeholder="WindGustSpeed">
+        <br>
+        <input type="text" id="inputField" name="name" placeholder="WindSpeed9am">
+        <input type="text" id="inputField" name="name" placeholder="WindSpeed3pm">
+        <input type="text" id="inputField" name="name" placeholder="Humidity9am">
+        <input type="text" id="inputField" name="name" placeholder="Humidity3pm">
+        <input type="text" id="inputField" name="name" placeholder="Pressure9am">
+        <input type="text" id="inputField" name="name" placeholder="Pressure3pm">
+        <input type="text" id="inputField" name="name" placeholder="Temperature9am">
+        <input type="text" id="inputField" name="name" placeholder="Temperature3pm">
+        <br>
+        <input type="text" id="inputField" name="name" placeholder="year">
+        <input type="text" id="inputField" name="name" placeholder="month">
+        <input type="text" id="inputField" name="name" placeholder="day">
+        <br>
+        <label for="RainToday">Rain Today:</label>
+        <select name="RainToday" id="RainToday">
+            <option>No</option>
+            <option>Yes</option>
+        </select>
+        <label for="WindGustDirection">Wind Gust Direction</label>
+        <select name="WindGustDirection" id="WindGustDirection">
+            <option>N</option>
+            <option>E</option>
+            <option>S</option>
+            <option>W</option>
+        </select>
+        <label for="WindDirection9am">Wind Direction 9am</label>
+        <select name="WindDirection9am" id="WindDirection9am">
+            <option>N</option>
+            <option>E</option>
+            <option>S</option>
+            <option>W</option>
+        </select>
+        <label for="WindDirection3pm">Wind Direction 3pm</label>
+        <select name="WindDirection3pm" id="WindDirection3pm">
+            <option>N</option>
+            <option>E</option>
+            <option>S</option>
+            <option>W</option>
+        </select>
+
+
+
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary btn-block btn-large" style="height: 30px; width: 200px">Predict</button>
+    </form>
+    <br>
+    {{ prediction_text }}
+    <br>
+    <br>
+    <img src="data:image/png;base64, {{ur1_3}}" alt="Submit Form" height="180" width="233" onerror="this.style.display='none'" />
+    <img src="data:image/png;base64, {{url_1}}" alt="Submit Form" height="180" width="233" onerror="this.style.display='none'" />
+    <img src="data:image/png;base64, {{url_4}}" alt="Submit Form" height="180" width="233" onerror="this.style.display='none'" />
+    <br>
+    <br>
+    <img src="data:image/png;base64, {{url_2}}" alt="Submit Form" height="150" width="711" onerror="this.style.display='none'" />
+
+</body>
+
+</html>
