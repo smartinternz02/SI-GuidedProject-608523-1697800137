@@ -9,12 +9,12 @@ import os
 from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
-model = pickle.load(open('C:/Users/SmartbridgePC/Desktop/AIML/Guided projects/rainfall_prediction/Rainfall.pkl', 'rb'))
-scale = pickle.load(open('C:/Users/SmartbridgePC/Desktop/AIML/Guided projects/rainfall_prediction/scale.pkl', 'rb'))
+model = pickle.load(open('files/dt.pkl', 'rb'))
+scale = pickle.load(open('files/scale.pkl', 'rb'))
 
 @app.route('/')# route to display the home page
 def home():
-    return render_template('index.html') #rendering the home page
+    return render_template('files/index.html') #rendering the home page
 
 @app.route('/predict',methods-["POST", "GET"])# route to show the predictions in a web UI
 def predict():
@@ -33,9 +33,9 @@ def predict():
     pred_prob = model.predict_proba(data)
     print(prediction)
     if prediction == "Yes":
-        return render_template("chance.html")
+        return render_template("files/chance.html")
     else:
-        return render_template("nochance.html")
+        return render_template("files/nochance.html")
     # showing the prediction results in a UI
 if __name__== "__main__":
     app.run()
